@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">atividade02</string>
+    <string name="write_msg">Digite sua mensagem</string>
+    <string name="send_msg">Enviar Mensagem</string>
+    <string name="back_msg">Voltar</string>
+    <string name="answer_msg">Resposta do Marciano</string>
 </resources>

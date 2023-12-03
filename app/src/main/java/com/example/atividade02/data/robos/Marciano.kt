@@ -1,11 +1,17 @@
 package com.example.atividade02.data.robos
 
 open class Marciano {
-    fun responda(frase: String) {
+    val pergunta = "Certamente"
+    val grito = "Opa! Calma aí!"
+    val pergunta_grito = "Relaxa, eu sei o que estou fazendo!"
+    val eu = "A responsabilidade é sua"
+    val vazio = "Não me incomode"
+    val outro = "Tudo bem, como quiser"
+    fun responda(frase: String): String {
         if (frase.trim().isEmpty()) {
-            println("Não me incomode")
+            return vazio
         } else if (frase.uppercase().contains("EU")) {
-            println("A responsabilidade é sua")
+            return eu
         } else {
             val palavras: List<String> = frase.trim().replace(Regex("\\s+"), " ").split(" ")
             var isGrito: Boolean = false
@@ -19,15 +25,15 @@ open class Marciano {
 
             if (frase.endsWith("?")) {
                 if (isGrito) {
-                    println("Relaxa, eu sei o que estou fazendo!")
+                    return pergunta_grito
                 } else {
-                    println("Certamente")
+                    return pergunta
                 }
             } else {
                 if (isGrito) {
-                    println("Opa! Calma aí!")
+                    return grito
                 } else {
-                    println("Tudo bem, como quiser")
+                    return outro
                 }
             }
         }

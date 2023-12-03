@@ -3,13 +3,11 @@ package com.example.atividade02.data.robos
 import com.example.atividade02.data.interfaces.AcaoUsuario
 
 class MarcianoPremium(val acaoUsuario: AcaoUsuario) : MarcianoAvancado() {
-    override fun responda(frase: String, a: Double, b: Double) {
+    override fun responda(frase: String, a: Double, b: Double): String {
         if (frase.contains("agir")) {
-            println("É pra já!")
-
-            acaoUsuario.realizarAcao()
+            return acaoUsuario.realizarAcao()
         } else {
-            super.responda(frase, a, b)
+            return super.responda(frase, a, b)
         }
     }
 }
