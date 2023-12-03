@@ -4,4 +4,7 @@
     <string name="send_msg">Enviar Mensagem</string>
     <string name="back_msg">Voltar</string>
     <string name="answer_msg">Resposta do Marciano</string>
+    <string name="do_calculo">Realizar Operação</string>
+    <string name="primeiro_operador">Digite o segundo operador</string>
+    <string name="segundo_operador">Digite o primeiro operador</string>
 </resources>

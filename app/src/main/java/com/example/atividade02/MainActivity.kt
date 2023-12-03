@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import com.example.atividade02.data.helpers.toOperacaoNumerica
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +18,15 @@ class MainActivity : AppCompatActivity() {
         btnSendMessage.setOnClickListener {
             val message = editTextMessage.text.toString()
 
-            val intent = Intent(this, ResponseActivity::class.java)
+            val operacaoNumerica = message.toOperacaoNumerica()
+
+            if (operacaoNumerica != null) {
+                intent = Intent(this, CalculoActivity::class.java)
+
+            } else {
+                intent = Intent(this, ResponseActivity::class.java)
+            }
+
             intent.putExtra("message", message)
             startActivity(intent)
         }

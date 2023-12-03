@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculoActivity">
+
+    <EditText
+        android:id="@+id/editTextOperador1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/segundo_operador"
+        android:layout_centerHorizontal="true"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/editTextOperador2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextOperador1"
+        android:layout_marginTop="16dp"
+        android:hint="@string/primeiro_operador"
+        android:layout_centerHorizontal="true"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnCalculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextOperador2"
+        android:layout_marginTop="16dp"
+        android:text="@string/do_calculo"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
