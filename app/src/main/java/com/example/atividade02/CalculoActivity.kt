@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import com.example.atividade02.utils.NavigationUtils
 
 class CalculoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,16 +18,20 @@ class CalculoActivity : AppCompatActivity() {
         val btnCalculo: Button = findViewById(R.id.btnCalculo)
 
         btnCalculo.setOnClickListener {
-            val message = intent.getStringExtra("message")
+            val message = intent.getStringExtra("message").toString()
             val operador1 = editTextOperator1.text.toString().toDoubleOrNull()
             val operador2 = editTextOperator2.text.toString().toDoubleOrNull()
 
             if (operador1 != null && operador2 != null) {
-                val intent = Intent(this, ResponseActivity::class.java)
-                intent.putExtra("message", message)
-                intent.putExtra("operador1", operador1)
-                intent.putExtra("operador2", operador2)
-                startActivity(intent)
+                NavigationUtils.navigateToActivity(
+                    this,
+                    ResponseActivity::class.java,
+                    "message" to message,
+                    "operador1" to operador1,
+                    "operador2" to operador2
+                )
+            } else {
+                Toast.makeText(this, "É necessário preencher os dois campos!", Toast.LENGTH_SHORT).show();
             }
         }
     }

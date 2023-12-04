@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import com.example.atividade02.data.helpers.toOperacaoNumerica
+import com.example.atividade02.utils.NavigationUtils
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,18 +18,21 @@ class MainActivity : AppCompatActivity() {
 
         btnSendMessage.setOnClickListener {
             val message = editTextMessage.text.toString()
-
             val operacaoNumerica = message.toOperacaoNumerica()
 
             if (operacaoNumerica != null) {
-                intent = Intent(this, CalculoActivity::class.java)
-
+                NavigationUtils.navigateToActivity(
+                    this,
+                    CalculoActivity::class.java,
+                    "message" to message
+                )
             } else {
-                intent = Intent(this, ResponseActivity::class.java)
+                NavigationUtils.navigateToActivity(
+                    this,
+                    ResponseActivity::class.java,
+                    "message" to message
+                )
             }
-
-            intent.putExtra("message", message)
-            startActivity(intent)
         }
     }
 }

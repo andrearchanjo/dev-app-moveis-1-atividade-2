@@ -27,10 +27,6 @@ class ResponseActivity : AppCompatActivity() {
         var operador1 = 0.00
         var operador2 = 0.00
 
-        if (message == "agir") {
-            Toast.makeText(this, "Ação Personalizada!", Toast.LENGTH_SHORT).show();
-        }
-
         if (intent.hasExtra("operador1") && intent.hasExtra("operador2")) {
             operador1 = intent.getDoubleExtra("operador1", 0.00)
             operador2 = intent.getDoubleExtra("operador2", 0.00)
@@ -42,6 +38,10 @@ class ResponseActivity : AppCompatActivity() {
         }
 
         textViewResponse.text = resposta
+
+        if (message == "agir") {
+            Toast.makeText(this, "Ação Personalizada!", Toast.LENGTH_SHORT).show();
+        }
 
         btnBack.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
