@@ -32,7 +32,6 @@ class ResponseActivity : AppCompatActivity() {
             operador2 = intent.getDoubleExtra("operador2", 0.00)
 
             resposta = marciano.responda(message ?: "", operador1, operador2)
-
         } else {
             resposta = marciano.responda(message ?: "", operador1, operador2)
         }

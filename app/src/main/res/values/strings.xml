@@ -5,6 +5,9 @@
     <string name="back_msg">Voltar</string>
     <string name="answer_msg">Resposta do Marciano</string>
     <string name="do_calculo">Realizar Operação</string>
-    <string name="primeiro_operador">Digite o segundo operador</string>
-    <string name="segundo_operador">Digite o primeiro operador</string>
+    <string name="primeiro_operador">Digite o primeiro operador</string>
+    <string name="segundo_operador">Digite o segundo operador</string>
+    <string name="greet_msg">"Olá, eu sou o robô marciano.\nVocê pode me perguntar qualquer coisa.\nDigite sua mensagem abaixo: "</string>
+    <string name="ask_robot">Pergunte ao Marciano</string>
+    <string name="answer_robot">Resposta do robô</string>
 </resources>
