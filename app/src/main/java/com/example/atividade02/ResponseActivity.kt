@@ -17,7 +17,7 @@ class ResponseActivity : AppCompatActivity() {
         val textViewResponse: TextView = findViewById(R.id.textViewResponse)
         val btnBack: Button = findViewById(R.id.btnBack)
 
-        val acaoUsuario = AcaoPersonalizada()
+        val acaoUsuario = AcaoPersonalizada(this);
         val marciano = MarcianoPremium(acaoUsuario)
 
         val message = intent.getStringExtra("message").toString()
