@@ -17,29 +17,20 @@ class ResponseActivity : AppCompatActivity() {
         val textViewResponse: TextView = findViewById(R.id.textViewResponse)
         val btnBack: Button = findViewById(R.id.btnBack)
 
-        val acaoUsuario = AcaoPersonalizada(this);
+        val acaoUsuario = AcaoPersonalizada(this)
         val marciano = MarcianoPremium(acaoUsuario)
 
         val message = intent.getStringExtra("message").toString()
 
-        var resposta = ""
+        val operador1 = intent.getDoubleExtra("operador1", 0.00)
+        val operador2 = intent.getDoubleExtra("operador2", 0.00)
 
-        var operador1 = 0.00
-        var operador2 = 0.00
-
-        if (intent.hasExtra("operador1") && intent.hasExtra("operador2")) {
-            operador1 = intent.getDoubleExtra("operador1", 0.00)
-            operador2 = intent.getDoubleExtra("operador2", 0.00)
-
-            resposta = marciano.responda(message ?: "", operador1, operador2)
-        } else {
-            resposta = marciano.responda(message ?: "", operador1, operador2)
-        }
+        val resposta = marciano.responda(message, operador1, operador2)
 
         textViewResponse.text = resposta
 
         if (message == "agir") {
-            Toast.makeText(this, "Ação Personalizada!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ação Personalizada!", Toast.LENGTH_SHORT).show()
         }
 
         btnBack.setOnClickListener {
