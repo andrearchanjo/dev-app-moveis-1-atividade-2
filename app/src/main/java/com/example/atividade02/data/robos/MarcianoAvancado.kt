@@ -10,9 +10,9 @@ open class MarcianoAvancado : Marciano() {
 
             if (valor.isInfinite()) {
                 return "Não é possível dividir por zero!"
-            } else {
-                return "Essa eu sei, o resultado é $valor"
             }
+
+            return "Essa eu sei, o resultado é $valor"
         } else {
             return super.responda(frase)
         }

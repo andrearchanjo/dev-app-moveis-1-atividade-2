@@ -14,7 +14,7 @@ open class Marciano {
             return eu
         } else {
             val palavras: List<String> = frase.trim().replace(Regex("\\s+"), " ").split(" ")
-            var isGrito: Boolean = false
+            var isGrito = false
 
             for (palavra in palavras) {
                 if (palavra == palavra.uppercase()) {
@@ -26,15 +26,13 @@ open class Marciano {
             if (frase.endsWith("?")) {
                 if (isGrito) {
                     return pergunta_grito
-                } else {
-                    return pergunta
                 }
+                return pergunta
             } else {
                 if (isGrito) {
                     return grito
-                } else {
-                    return outro
                 }
+                return outro
             }
         }
     }

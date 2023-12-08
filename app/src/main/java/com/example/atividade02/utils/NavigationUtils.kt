@@ -5,10 +5,6 @@ import android.content.Intent
 
 object NavigationUtils {
     fun navigateToActivity(context: Context, targetActivity: Class<*>, vararg keyValuePairs: Pair<String, Any>) {
-        if (context == null) {
-            return
-        }
-
         val intent = Intent(context, targetActivity)
 
         for ((key, value) in keyValuePairs) {

@@ -1,6 +1,5 @@
 package com.example.atividade02
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -31,7 +30,7 @@ class CalculoActivity : AppCompatActivity() {
                     "operador2" to operador2
                 )
             } else {
-                Toast.makeText(this, "É necessário preencher os dois campos!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "É necessário preencher os dois campos!", Toast.LENGTH_SHORT).show()
             }
         }
     }
